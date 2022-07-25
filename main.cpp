@@ -36,12 +36,12 @@ int main(int argc, char** argv)
     ConveyGoF gof;
     gof.initCells(board);
 
-    // auto start = chrono::system_clock::now();
+    auto start = chrono::system_clock::now();
     for (int i = 0; i < iterateCount; ++i) {
         gof.proceed();
     }
-    // chrono::duration<double> elapsed = chrono::system_clock::now() - start;
-    // std::cout << elapsed.count() << std::endl;
+    chrono::duration<double> elapsed = chrono::system_clock::now() - start;
+    std::cout << elapsed.count() << std::endl;
 
     gof.printCells(std::cout);
     
