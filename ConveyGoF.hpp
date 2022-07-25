@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <vector>
-#include <set>
 #include "Cell.hpp"
 
 using namespace std;
@@ -10,8 +9,8 @@ using namespace std;
 class ConveyGoF
 {
 protected:
-    set<Cell> liveCells;
-    set<Cell> deadCells;
+    CellSet liveCells;
+    CellSet deadCells;
 
     inline void addCell(coord_type x, coord_type y)
     {
@@ -20,14 +19,14 @@ protected:
     }
 
 public:
-    void initCells(set<Cell> &board)
+    void initCells(CellSet &board)
     {
         liveCells = move(board);
     }
 
     void proceed()
     {
-        set<Cell> nextLiveCells;
+        CellSet nextLiveCells;
         deadCells.clear();
 
         for (const auto &cell : liveCells)

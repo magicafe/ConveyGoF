@@ -1,7 +1,6 @@
 #pragma once
 
 #include <string>
-#include <set>
 #include <fstream>
 #include <iostream>
 #include "Cell.hpp"
@@ -11,7 +10,7 @@ using namespace std;
 class LifUtil
 {
 public:
-    static bool LoadFile(string &filename, set<Cell> &board)
+    static bool LoadFile(string &filename, CellSet &board)
     {
         ifstream lif(filename);
         if (!lif.is_open())

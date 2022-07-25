@@ -1,5 +1,5 @@
 #include <iostream>
-#include <set>
+#include <unordered_set>
 #include <string>
 #include <chrono>
 #include "ConveyGoF.hpp"
@@ -27,7 +27,7 @@ int main(int argc, char** argv)
         }
     }
 
-    set<Cell> board;
+    CellSet board;
     if (!LifUtil::LoadFile(filename, board))
     {
         return -1;
