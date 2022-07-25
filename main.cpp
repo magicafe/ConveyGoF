@@ -38,7 +38,7 @@ int main(int argc, char** argv)
 
     auto start = chrono::system_clock::now();
     for (int i = 0; i < iterateCount; ++i) {
-        gof.proceed();
+        gof.proceed(5);
     }
     chrono::duration<double> elapsed = chrono::system_clock::now() - start;
     std::cout << elapsed.count() << std::endl;
