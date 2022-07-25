@@ -14,7 +14,11 @@ struct Cell
 
     Cell(coord_type ix, coord_type iy) : x(ix), y(iy)
     {
+#ifdef BIG_INT
         id = x.to_string() + y.to_string();
+#else
+        id = to_string(x) + to_string(y);
+#endif
     }
 
     bool operator<(const Cell &other) const
@@ -40,7 +44,7 @@ class CellEqual
 public:
     bool operator()(const Cell &lhs, const Cell &rhs) const
     {
-        return lhs.id == rhs.id;
+        return lhs.x == rhs.x && lhs.y == rhs.y;
     }
 };
 
