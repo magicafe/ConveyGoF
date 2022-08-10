@@ -41,9 +41,10 @@ int main(int argc, char** argv)
         gof.proceed();
     }
     chrono::duration<double> elapsed = chrono::system_clock::now() - start;
-    std::cout << elapsed.count() << std::endl;
 
     gof.printCells(std::cout);
     
+    std::cout << elapsed.count() << std::endl;
+
     return 0;
 }
